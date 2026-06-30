@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ima Copilot | 多源资料整理 Skill</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="home-body">
+    <main class="ima-home-shell">
+      <aside class="home-sidebar">
+        <div class="home-logo">
+          <div class="panda-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <strong>ima</strong>
+          <button class="home-collapse" type="button" aria-label="收起侧边栏">▣</button>
+        </div>
+        <button class="home-new-chat" type="button">⊞ 新对话</button>
+        <nav class="home-nav" aria-label="主导航">
+          <button type="button">♙ 知识库 <span>›</span></button>
+          <button type="button">◉ 发现广场 <span>›</span></button>
+          <button type="button">◷ 问答历史</button>
+          <button id="sidebarSkillBtn" class="home-skill-link" type="button">✦ 多源整理 Skill <em>新增</em></button>
+        </nav>
+        <p class="home-login-tip">登录以同步历史会话</p>
+      </aside>
+
+      <section class="home-main">
+        <div class="home-topbar">
+          <button class="home-login" type="button">登录</button>
+          <button class="home-desktop" type="button">▭ 打开电脑版</button>
+        </div>
+        <div class="home-center">
+          <div class="home-wordmark"><strong>ima</strong><span>copilot</span></div>
+          <section class="home-prompt" aria-label="ima 问答输入框">
+            <textarea placeholder="有问题尽管问"></textarea>
+            <div class="home-prompt-actions">
+              <div class="home-pills">
+                <button type="button">▣ 对话模式⌄</button>
+                <button type="button">◎ DS 快速⌄</button>
+                <button id="promptSkillBtn" class="home-skill-pill" type="button">✦ 多源整理 Skill</button>
+              </div>
+              <div class="home-send-area">
+                <button id="attachHomeBtn" type="button" aria-label="添加资料">⌘</button>
+                <button id="sendHomeBtn" class="home-send" type="button" aria-label="发送">➤</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="home-examples" aria-label="精选示例">
+          <div class="home-section-head"><h2>精选示例</h2><button type="button">‹ 探索更多</button></div>
+          <div class="example-grid">
+            <button id="exampleSkillBtn" class="example-card skill-entry-card" type="button">
+              <span>ima Skill</span><strong>多源资料整理</strong><small>公众号、论文、网页、笔记、会议纪要批量整理成笔记/综述/大纲</small>
+            </button>
+            <article class="example-card muted-card"><span>知识库</span><strong>上传资料后追问</strong><small>把资料放进知识库，再让 ima 解释重点。</small></article>
+            <article class="example-card muted-card"><span>Copilot</span><strong>快速生成思路</strong><small>适合轻量问答和即时灵感。</small></article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="homeToast" class="toast" role="status" aria-live="polite"></div>
+    <script src="home.js"></script>
+  </body>
+</html>
