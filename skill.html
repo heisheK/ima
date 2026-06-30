@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ima Skill | 多源资料整理</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="skill-page">
+      <header class="skill-topbar">
+        <div class="skill-brand"><strong>ima Skill</strong><span>/</span><span>批量整理</span></div>
+        <nav class="skill-steps" aria-label="流程导航">
+          <button type="button">Import</button><button class="active" type="button">Select</button><button type="button">Generate</button><button type="button">Export</button>
+        </nav>
+        <div class="skill-icons"><button type="button">⚙</button><button type="button">?</button><button type="button">◎</button></div>
+      </header>
+
+      <section class="hero-copy">
+        <h1>多源资料整理</h1>
+        <p>公众号、论文、网页、笔记、会议纪要可同时选择，批量生成笔记、综述、纪要或大纲。</p>
+      </section>
+
+      <section class="progress-row" aria-label="任务进度">
+        <div class="progress-pill done"><span>1</span>导入资料</div>
+        <div class="progress-pill active"><span>2</span>多选组合</div>
+        <div class="progress-pill"><span>3</span>生成产出</div>
+        <div class="progress-pill"><span>4</span>保存/导出</div>
+      </section>
+
+      <section class="toolbar" aria-label="资料类型">
+        <div class="source-tabs">
+          <button id="importWechatBtn" class="active" type="button">公众号</button>
+          <button id="importPaperBtn" type="button">论文 PDF</button>
+          <button id="importWebBtn" type="button">网页</button>
+          <button id="importNoteBtn" type="button">已有笔记</button>
+          <button id="importMeetingBtn" type="button">会议纪要</button>
+        </div>
+        <div class="bulk-actions"><button id="selectAllBtn" type="button">全选</button><button id="invertSelectBtn" type="button">反选</button><strong id="selectedCount">已选 0 项</strong></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel source-panel">
+          <div class="panel-head"><div><h2>资料池</h2><p>不同来源可同时勾选、合并整理</p></div><button id="generateBtn" class="dark-btn" type="button">生成结果</button></div>
+          <div id="sourceList" class="source-list"></div>
+          <div id="answerBox" class="note-summary"></div>
+          <div class="panel-actions"><button id="addAllBtn" class="primary-btn" type="button">全部加入结构</button><button id="clearCanvasBtn" class="secondary-btn" type="button">清空</button></div>
+        </aside>
+
+        <section class="panel ai-panel">
+          <div class="panel-head">
+            <div><h2>AI 提炼</h2><p>从已选资料中抽取可复用卡片</p></div>
+            <div class="mode-tabs" role="tablist" aria-label="生成类型">
+              <button class="active" data-mode="notes" type="button">笔记</button><button data-mode="review" type="button">综述</button><button data-mode="minutes" type="button">纪要</button><button data-mode="outline" type="button">大纲</button><button data-mode="quotes" type="button">金句</button>
+            </div>
+          </div>
+          <div id="cardBank" class="card-bank" aria-label="知识卡片"></div>
+          <div id="canvas" class="structure-canvas" aria-label="输出结构画布"><div class="canvas-empty"><strong>拖拽卡片到这里</strong><span>组合成笔记、综述、纪要或汇报结构</span></div></div>
+        </section>
+
+        <aside class="panel output-panel">
+          <div class="panel-head"><div><h2>结果预览</h2><p id="outputHint">结构化笔记实时生成</p></div><button id="docBtn" class="dark-btn" type="button">保存/导出</button></div>
+          <div id="outputDraft" class="output-draft"></div>
+        </aside>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
